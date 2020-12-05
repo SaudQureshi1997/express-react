@@ -21,8 +21,8 @@ app.use((err, req, res, next) => {
 
 app.use(router);
 
-app.listen(process.env.APP_PORT || 8000, '0.0.0.0', async () => {
+app.listen(process.env.PORT || 5000, '0.0.0.0', async () => {
   await connection();
   console.log("Connected to mongoose");
-  console.log(`Started at: ${process.env.APP_PORT || 8000}...`);
+  console.log(`Started at: ${process.env.PORT || 5000}...`);
 });

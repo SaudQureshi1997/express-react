@@ -7,7 +7,7 @@
     "prod": "node -r dotenv/config ./dist/index.js",
     "build": "rm -rf dist && babel src -d ./dist",
     "dev": "rm -rf dist && concurrently \"babel src -d dist --watch\"  \"nodemon -r dotenv/config ./dist/index.js\"",
-    "start": "npm run build && npm run prod"
+    "start": "npm run build && npm run prod -p $PORT"
   },
   "keywords": [],
   "author": "writedynamic@gmail.com",
