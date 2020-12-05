@@ -19,24 +19,10 @@ const TodoSchema = mongoose.Schema({
   },
 });
 
-TodoSchema.static("findByUserId", function (user_id) {
-  return this.find({ user_id });
+TodoSchema.static("findByUserId", function (user_id, query = {}) {
+  return this.find({ user_id, ...query });
 });
 
-TodoSchema.methods.archive = function () {
-  this.archived = true;
-  return this.save();
-};
-
-TodoSchema.methods.complete = function () {
-  this.completed = true;
-  return this.save();
-};
-
-TodoSchema.methods.setPriorityTo = function (priority) {
-  this.priority = priority;
-  return this.save();
-};
 
 TodoSchema.methods.ownedBy = function (user_id) {
   return this.user_id == user_id;

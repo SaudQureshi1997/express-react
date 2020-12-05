@@ -9,9 +9,9 @@ router.get('me', auth.me, [authMiddleware]);
 
 router.get('todos', todos.index, [authMiddleware]);
 router.post('todos', todos.store, [authMiddleware]);
-router.patch('todos/:id', todos.complete, [authMiddleware]);
-router.patch('todos/:id/archive', todos.archive, [authMiddleware]);
-router.patch('todos/:id/priority', todos.setPriority, [authMiddleware]);
-router._delete('todos/:id', todos.remove, [authMiddleware]);
+router.post('todos/complete', todos.complete, [authMiddleware]);
+router.post('todos/archive', todos.archive, [authMiddleware]);
+router.post('todos/priority', todos.setPriority, [authMiddleware]);
+router._delete('todos', todos.remove, [authMiddleware]);
 
 export default router.router;
