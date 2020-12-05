@@ -8,7 +8,7 @@ import {
   TextField,
 } from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
-import { useHistory, Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { connect } from "react-redux";
 import { addErrors, addMessage } from "../redux/reducers/tasks/actions";
 
